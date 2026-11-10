@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: runak-telegram-bot
+    runtime: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    healthCheckPath: /health
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        sync: false
+      - key: BOT_OWNER_ID
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: API_KEY_SECRET
+        sync: false
+      - key: KEY_PREFIX
+        sync: false
+      - key: SITE_URL
+        sync: false
+      - key: UPI_ID
+        sync: false
+      - key: PAY_CONTACT
+        sync: false
